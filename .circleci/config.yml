@@ -36,5 +36,5 @@ jobs:
           name: deploy to AWS
           command: |
             ls
-            aws sts get-caller-identity
+            aws s3 cp index.html s3://$S3_BUCKET_NAME/index.html
 
