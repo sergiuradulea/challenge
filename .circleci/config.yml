@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cimg/base:2020.01
+      - image: circleci/python:latest
     working_directory: ~/sergiu
     # environment:
     #   HUGO_BUILD_DIR: ~/hugo/public
