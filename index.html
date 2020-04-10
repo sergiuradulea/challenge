@@ -1,0 +1,22 @@
+<html>
+<head>
+<style>
+.exp{visibility: hidden;}
+</style>
+<script>
+function unhide() {
+    var hid = document.getElementsByClassName("exp");
+    // Emulates jQuery $(element).is(':hidden');
+    if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+        hid[0].style.visibility = "visible";
+    }
+}
+</script>
+</head>
+<body>
+<button onclick="unhide()">Show my name</button>
+<div class="exp">
+    <p class="and">Sergiu</p>
+</div>
+</body>
+</html>
