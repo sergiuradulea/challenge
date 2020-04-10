@@ -35,5 +35,6 @@ jobs:
       - deploy:
           name: deploy to AWS
           command: |
+            ls
             aws sts get-caller-identity
 
