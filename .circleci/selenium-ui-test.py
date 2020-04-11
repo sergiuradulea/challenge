@@ -25,6 +25,3 @@ class TestUntitled():
     self.driver.find_element(By.CSS_SELECTOR, "button").click()
     self.driver.find_element(By.XPATH, "//p[contains(.,\'Sergiu\')]").click()
     self.driver.close()
-  
-if __name__ == "__main__":
-   unittest.main()

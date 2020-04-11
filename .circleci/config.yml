@@ -40,6 +40,10 @@ jobs:
             pip install pytest
             pip install selenium
       - run:
+          name: Get Geckodriver
+          command: |
+            apt-get install firefox-geckodriver
+      - run:
           name: Run Selenium 
           command: |
             python /tmp/selenium-ui-test.py 
