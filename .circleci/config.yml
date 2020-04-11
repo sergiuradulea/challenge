@@ -16,12 +16,33 @@ jobs:
           path: /tmp/index.html
       - store_artifacts:
           path: /tmp/test-s3-config.py
+      - store_artifacts:
+          path: /tmp/selenium-test-ui.py
       - persist_to_workspace:
                 root: /tmp
                 paths:
                   - index.html
                   - test-s3-config.py
+                  - selenium-test-ui.py
 
+  test-ui:
+    docker:
+      - image: circleci/python:latest
+    working_directory: ~/test
+    steps:
+      - attach_workspace:
+          at: /tmp
+
+      - run:
+          name: Install PyTest and Selenium
+          command: |
+            pip install pytest
+            pip install selenium
+      - run:
+          name: Run Selenium 
+          command: |
+            pytest /tmp/selenium-test-ui.py --verbose --capture=no
+      
 
   deploy-s3:
     docker:

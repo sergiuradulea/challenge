@@ -25,4 +25,4 @@ hosting = s3.get_bucket_website(
     Bucket=BUCKET_NAME
 )
 
-print(hosting0)
+print(hosting)
