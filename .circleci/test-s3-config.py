@@ -11,9 +11,18 @@ s3 = boto3.client('s3')
 versioning = s3.get_bucket_versioning(
     Bucket=BUCKET_NAME
 )
+
 print(versioning)
+
 try:
 	if versioning["Status"] == "Enabled":
 		print(f'Versioning is enabled on bucket: {BUCKET_NAME}')
 except:
 	raise ValueError(f'Versioning is disabled on bucket: {BUCKET_NAME}')
+
+
+hosting = s3.get_bucket_website(
+    Bucket=BUCKET_NAME
+)
+
+print(hosting0)

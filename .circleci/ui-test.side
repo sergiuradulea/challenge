@@ -1,0 +1,65 @@
+{
+  "id": "df4d1141-6093-45c1-b5b4-4d00dee9df9b",
+  "version": "2.0",
+  "name": "test1",
+  "url": "http://circleci-sergiu-raduleae.s3-website-eu-west-1.amazonaws.com",
+  "tests": [{
+    "id": "11b3dba9-3d03-4aed-b1e5-8457d54b8bd3",
+    "name": "Untitled",
+    "commands": [{
+      "id": "09bd4841-c0f7-4b9e-a27d-ea511afe4862",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "638e95e9-3e67-4dc9-8555-04a7a77481cc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1084x688",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "64853774-bab3-4fb3-984f-a6c135e7c61b",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@onclick='unhide()']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Show my name')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "791e216a-2eac-47dd-a9ad-1c8b9a3fab3c",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//p[contains(.,'Sergiu')]",
+      "targets": [
+        ["css=.and", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Sergiu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f1ea1b9-440c-40b3-b0ac-4f13d9349183",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "d6d9219d-afe7-4444-9790-cfee3d72629b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["11b3dba9-3d03-4aed-b1e5-8457d54b8bd3"]
+  }],
+  "urls": ["http://circleci-sergiu-raduleae.s3-website-eu-west-1.amazonaws.com/"],
+  "plugins": []
+}
