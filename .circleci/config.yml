@@ -28,7 +28,7 @@ jobs:
 
   test-ui:
     docker:
-      - image: circleci/python:latest
+      - image: circleci/python:3.6-stretch-browsers
     working_directory: ~/test
     steps:
       - attach_workspace:
@@ -39,11 +39,6 @@ jobs:
           command: |
             pip install pytest
             pip install selenium
-      - run:
-          name: Get Geckodriver
-          command: |
-            pip install webdrivermanager
-            webdrivermanager firefox --linkpath /usr/local/bin
       - run:
           name: Run Selenium 
           command: |
