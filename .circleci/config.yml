@@ -39,7 +39,7 @@ jobs:
           command: |
             pip install pytest
             pip install selenium
-      -run:
+      - run:
           name: Stand up SimpleHTTPServer for UI Test
           command: |
             cp /tmp/index.html .
