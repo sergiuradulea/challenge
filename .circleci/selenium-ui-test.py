@@ -19,7 +19,7 @@ class TestUntitled():
     self.driver.quit()
   
   def test_untitled(self):
-    self.driver.get("http://circleci-sergiu-raduleae.s3-website-eu-west-1.amazonaws.com/")
+    self.driver.get("http://127.0.0.1:8000")
     self.driver.set_window_size(1084, 688)
     self.driver.find_element(By.CSS_SELECTOR, "button").click()
     self.driver.find_element(By.XPATH, "//p[contains(.,\'Sergiu\')]").click()
