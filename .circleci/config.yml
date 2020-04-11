@@ -43,7 +43,7 @@ jobs:
           name: Stand up SimpleHTTPServer for UI Test
           command: |
             cp /tmp/index.html .
-            python -m http.server 8000
+            python -m http.server 8000 &
       - run:
           name: Run Selenium 
           command: |
