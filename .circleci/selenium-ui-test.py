@@ -2,6 +2,7 @@
 import pytest
 import time
 import json
+import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -25,3 +26,5 @@ class TestUntitled():
     self.driver.find_element(By.XPATH, "//p[contains(.,\'Sergiu\')]").click()
     self.driver.close()
   
+if __name__ == "__main__":
+   unittest.main()

@@ -42,7 +42,7 @@ jobs:
       - run:
           name: Run Selenium 
           command: |
-            pytest /tmp/selenium-ui-test.py --verbose --capture=no
+            python /tmp/selenium-ui-test.py 
       
 
   deploy-s3:
