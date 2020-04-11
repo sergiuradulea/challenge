@@ -40,13 +40,10 @@ jobs:
             pip install pytest
             pip install selenium
       - run:
-          name: Stand up SimpleHTTPServer for UI Test
+          name: Stand up SimpleHTTPServer for UI Test and Run Selenium Test
           command: |
             cp /tmp/index.html .
             python -m http.server 8000 &
-      - run:
-          name: Run Selenium 
-          command: |
             pytest /tmp/selenium-ui-test.py 
       
 
