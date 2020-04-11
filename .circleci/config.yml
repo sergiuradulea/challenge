@@ -4,37 +4,20 @@ jobs:
     docker:
       - image: circleci/python:latest
     working_directory: ~/sergiu
-    # environment:
-    #   HUGO_BUILD_DIR: ~/hugo/public
     steps:
-
-      # install git
-
-      # checkout the repository
       - checkout
-
-      # # install git submodules for managing third-party dependencies
-      # - run: git submodule sync && git submodule update --init
-
       - run:
-          name: install AWS CLI (first install pip, the Python package manager)
+          name: Install AWS CLI 
           command: |
             pip install awscli
-
       - run:
-          name: configure credentials
+          name: Configure AWS Credentials
           command: |
             aws configure set aws_access_key_id $ACCESS_KEY_ID
             aws configure set aws_secret_access_key $SECRET_ACCESS_KEY
             aws configure set default.region eu-west-1
-
- 
-
-      # `deploy` step: identical to a `run` step, but uses only one container:
-      # /docs/2.0/configuration-reference/#deploy 
       - deploy:
-          name: deploy to AWS
+          name: Deploy to S3 Static Website Hosting
           command: |
-            ls
             aws s3 cp index.html s3://$S3_BUCKET_NAME/index.html
 
