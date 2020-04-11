@@ -12,6 +12,7 @@ jobs:
           command: |
             cp index.html /tmp/index.html
             cp .circleci/test-s3-config.py /tmp/test-s3-config.py
+            cp .circleci/selenium-ui-test.py /tmp/selenium-ui-test.py
       - store_artifacts:
           path: /tmp/index.html
       - store_artifacts:
