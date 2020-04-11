@@ -11,7 +11,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-class TestUntitled():
+class TestUntitled(unittest.Testcase):
   def setup_method(self, method):
     self.driver = webdriver.Firefox()
     self.vars = {}
@@ -25,3 +25,6 @@ class TestUntitled():
     self.driver.find_element(By.CSS_SELECTOR, "button").click()
     self.driver.find_element(By.XPATH, "//p[contains(.,\'Sergiu\')]").click()
     self.driver.close()
+
+if __name__ == '__main__':
+    unittest.main()
