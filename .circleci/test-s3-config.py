@@ -12,6 +12,8 @@ versioning = s3.get_bucket_versioning(
     Bucket=BUCKET_NAME
 )
 print(versioning)
-# if versioning["Status"] != "Enabled":
-# 	# raise ValueError(f'Versioning is disabled on bucket: {BUCKET_NAME}')
-# 	raise ValueError('ba')
+try:
+	if versioning["Status"] == "Enabled":
+		print(f'Versioning is enabled on bucket: {BUCKET_NAME}')
+except:
+	raise ValueError(f'Versioning is disabled on bucket: {BUCKET_NAME}')
