@@ -42,7 +42,7 @@ jobs:
       - run:
           name: Get Geckodriver
           command: |
-            apt-get install firefox-geckodriver
+            sudo apt-get install firefox-geckodriver
       - run:
           name: Run Selenium 
           command: |
