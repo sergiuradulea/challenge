@@ -42,7 +42,8 @@ jobs:
       - run:
           name: Get Geckodriver
           command: |
-            sudo apt-get install firefox-geckodriver
+            pip install webdrivermanager
+            webdrivermanager firefox --linkpath /usr/local/bin
       - run:
           name: Run Selenium 
           command: |
