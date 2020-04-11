@@ -77,6 +77,9 @@ workflows:
   build-deploy:
     jobs:
       - build
+      - test-ui:
+          requires: 
+            - build
       - deploy-s3:
           requires:
-            - build
+            - test-ui
