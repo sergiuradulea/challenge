@@ -43,6 +43,10 @@ jobs:
             aws configure set aws_secret_access_key $SECRET_ACCESS_KEY
             aws configure set default.region eu-west-1
       - run:
+          name: Test S3 Configuration
+          command: |
+            python /tmp/test-s3-config.py
+      - run:
           name: Deploy to S3 Static Website Hosting
           command: |
             aws s3 cp /tmp/index.html s3://$S3_BUCKET_NAME/index.html
