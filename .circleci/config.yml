@@ -17,13 +17,13 @@ jobs:
       - store_artifacts:
           path: /tmp/test-s3-config.py
       - store_artifacts:
-          path: /tmp/selenium-test-ui.py
+          path: /tmp/selenium-ui-test.py
       - persist_to_workspace:
                 root: /tmp
                 paths:
                   - index.html
                   - test-s3-config.py
-                  - selenium-test-ui.py
+                  - selenium-ui-test.py
 
   test-ui:
     docker:
@@ -41,7 +41,7 @@ jobs:
       - run:
           name: Run Selenium 
           command: |
-            pytest /tmp/selenium-test-ui.py --verbose --capture=no
+            pytest /tmp/selenium-ui-test.py --verbose --capture=no
       
 
   deploy-s3:
